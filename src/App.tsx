@@ -1,10 +1,12 @@
 import React from 'react';
-import './App.css';
+import './styles/App.css';
+
+import Root from './router/Root';
 
 const App: React.FC = (): JSX.Element => {
   return (
     <div className="App">
-      <span>Hello ...!</span>
+      <Root />
     </div>
   );
 }

@@ -11,5 +11,4 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     // onClick: () => void;
     // add any other custom props you want to use
-  }
-  
+}

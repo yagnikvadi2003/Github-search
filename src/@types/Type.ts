@@ -9,6 +9,14 @@ export interface User {
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     text: string;
     className?: string;
-    // onClick: () => void;
+    onClick?: (value: any) => void;
     // add any other custom props you want to use
 }
+
+export interface SearchProps extends React.InputHTMLAttributes<HTMLInputElement> {
+    type: string;
+    value?: any;
+    placeholder: string;
+    className?: string;
+    onChange?: (value: any) => void;
+} 

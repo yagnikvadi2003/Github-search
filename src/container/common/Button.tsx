@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { ButtonProps } from '../../@types/Type';
 
 const Button: React.FC<ButtonProps> = ({ text, className, onClick }): JSX.Element => {  

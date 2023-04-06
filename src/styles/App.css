@@ -1,42 +1,81 @@
+/**
+*
+* Default styles
+*
+**/
 .App {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: calc(8px + 1vmin) !important;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  .App {
-    font-size: calc(9px + 1vmin) !important;
-  }
+input {
+  border: none;
+  outline: none;
+}
+input:focus, textarea:focus, select:focus{
+  border: none;
+  outline: none;
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  .App {
-    font-size: calc(9px + 1.5vmin) !important;
-  }
+button {
+  border: none;
+  outline: none;
+}
+button:focus {
+  border: none;
+  outline: none;
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  .App {
-    font-size: calc(10px + 2vmin) !important;
-  }
+/**
+*
+* Custom Component styles
+*
+**/
+input#input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  .App {
-    font-size: calc(11px + 2.5vmin) !important;
-  }
+/**
+*
+* Root component styles
+*
+**/
+#main {
+  border-radius: 10px;
+  box-shadow: 0 0 10px lightgray;
+  width: clamp(25%, 10px, 50%);
+  height: 100px;
+  text-align: center;
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  .App {
-    font-size: calc(12px + 3vmin) !important;
-  }
+/**
+*
+* User Search component styles
+*
+**/
+.userSearchMain {
+  height: 80%;
+  padding: 10px 0;
+}
+.userSearchHeading {
+  padding: 5px 0;
+}
+.userSearchInput{ 
+  width: clamp(50%, 100px, 100%);
+  height: 30px;
+  background-color: ghostwhite;
+  margin: 0 5px;
+}
+.userSearchButton {
+  width: clamp(25%, 50px, 50%);
+  height: 30px;
+  border-radius: 5px;
+  background-color: lightgray;
+  margin: 0 5px;
 }

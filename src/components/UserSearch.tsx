@@ -1,35 +1,58 @@
 import React from 'react';
 
-import UserProfile from './UserProfile';
-
-import Input from '../container/common/Input';
-import Button from '../container/common/Button';
+import Form from '../container/common/Form';
+import Card from '../container/common/Card';
 
 const UserSearch: React.FC = (): JSX.Element => {
   // 👇️ pass empty string as initial value
-  const [targetValue, setTargetValue] = React.useState<String | null>('');
+  const [targetValue, setTargetValue] = React.useState('');
 
   /**
   * Here we restrict all handleClicks to be exclusively on 
-  * HTMLButton Elements
+  * HTMLFormElement Elements
+  * 
+  * We're using `FormEventHandler` as type for the event.
+  * with `HTMLFormElement` as a type parameter.
+  * It contains properties an event can have
+  * and methods (such as `preventDefault` an others).
+  * be fired on an HTML <button> element.
+  **/
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event: React.FormEvent<HTMLFormElement>) => {
+    // 👇️ prevent page refresh
+    event?.preventDefault();
+    console.log("targetValue: ", targetValue);
+  }
+
+  /**
+  * Here we restrict all handleClicks to be exclusively on 
+  * HTMLInputElement Elements
+  * 
+  * We're using `ChangeEvent` as type for the event.
+  * with `HTMLInputElement` as a type parameter.
+  * It contains properties an event can have
+  * and methods (such as `preventDefault` an others).
+  **/
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // 👇️ prevent page refresh
+    event?.preventDefault();
+    setTargetValue(event.target.value);
+  };
+
+  /**
+  * Here we restrict all handleClicks to be exclusively on 
+  * HTMLButtonElement Elements
   * 
   * We're using `MouseEvent` as type for the event.
   * with `HTMLButtonElement` as a type parameter.
   * It contains properties an event can have
   * and methods (such as `preventDefault` an others).
-  * be fired on an HTML <button> element.
   **/
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    // 👇️ prevent page refresh
     event?.preventDefault();
-    setTargetValue(targetValue);
-    console.log("targetValue: ", targetValue);
-  }
-
-  const handleURLClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    const example = event.currentTarget.getAttribute('dataExample');
-    console.log("example", example);
-  }
+    // 👇️ redirects to an external URL
+    window.open('https://github.com/yagnikvadi2003', '_blank', 'noopener noreferrer');
+  };
 
   /*
   * 👇️type assertion
@@ -39,10 +62,9 @@ const UserSearch: React.FC = (): JSX.Element => {
     <React.Fragment>
       <div className="userSearchMain">
         <div className='userSearchHeading'>GitHub User Search</div>
-        <Input type='search' placeholder='Please Enter Here...!' className='userSearchInput' value={targetValue as string} onChange={(event)=>setTargetValue(event.target.value)} />
-        <Button text='Search' className='userSearchButton' onClick={(event) => handleClick(event)} />
+        <Form onSubmit={handleSubmit} onChange={handleChange} value={targetValue} id='userSearchInput' className='userSearchButton'/>
       </div>
-      <UserProfile src="../assets/images/download.jpeg" alt="Github Profile Photo" dataExample="https://admin.finestardiamonds.com" onClick={handleURLClick} />
+      <Card avatarUrl='../assets/images/download.jpeg' text='GitHub' onClick={handleClick}/>
     </React.Fragment>
   );
 };

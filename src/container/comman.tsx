@@ -1,7 +1,8 @@
-import axios from "axios";
+import axios, { AxiosInstance } from 'axios';
 
-export const API_URL = "https://api.github.com";
-
-export const API = axios.create({
-    baseURL: API_URL,
+export const api: AxiosInstance = axios.create({
+  baseURL: 'https://api.github.com',
+  headers: {
+    "Content-type": "application/json"
+  }
 });

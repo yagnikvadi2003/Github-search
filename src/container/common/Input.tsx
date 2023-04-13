@@ -1,8 +1,7 @@
 import React from 'react';
+import { InputProps } from '../../@types/Type';
 
-import { SearchProps } from '../../@types/Type';
-
-const Input: React.FC<SearchProps> = ({ type, placeholder, className, value, onChange }): JSX.Element => {
+const Input: React.FC<InputProps> = ({ id, type, placeholder, className, value, onChange }): JSX.Element => {
   return (
     <input
       type={type}
@@ -11,7 +10,8 @@ const Input: React.FC<SearchProps> = ({ type, placeholder, className, value, onC
       value={value}
       onChange={onChange}
       autoComplete="off"
-      id='input'
+      id={id}
+      required
     />
   );
 };

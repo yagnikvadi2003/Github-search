@@ -1,23 +1,23 @@
-export interface User {
-    avatar: string;
-    url: string;
-    username: string;
-};
-
+/*
+*
+* define Custom Attributes Component type properties.
+* add any other custom props you want to use.
+*
+*/
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     text: string;
     className?: string;
-    dataExample?: string;
-    onClick?: (value: any) => void;
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
     // add any other custom props you want to use
 }
 
-export interface SearchProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+    id?: string;
     type: string;
     value?: string;
     placeholder: string;
     className?: string;
-    onChange?: (value: any) => void;
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 } 
 
 export interface ImgProps extends React.ImgHTMLAttributes<HTMLImageElement> {
@@ -29,10 +29,16 @@ export interface ImgProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     id: string;
 }
 
-export interface UserProfileProps extends React.HTMLProps<HTMLImageElement | HTMLButtonElement> {
-    src: string;
-    alt: string;
+export interface FormProps {
+    onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    value: string;
     id?: string;
-    url?: string;
-    dataExample?: string;
+    className?: string;
+}
+
+export interface CardProps extends React.ImgHTMLAttributes<HTMLImageElement | HTMLButtonElement> {
+    text: string;
+    avatarUrl: string;
+    onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }

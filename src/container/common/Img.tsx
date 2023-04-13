@@ -1,9 +1,8 @@
 import React from 'react';
 import * as _ from 'lodash';
+import { ImgProps } from '../../@types/Type';
 
 import ERROR_IMAGE from '../../assets/svg/noImage.svg';
-
-import { ImgProps } from '../../@types/Type';
 
 /**
  * Returns an object that can 

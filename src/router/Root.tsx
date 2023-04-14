@@ -1,12 +1,15 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import UserSearch from '../components/UserSearch';
+import Loading from '../container/common/Loading';
+
+const UserSearch = React.lazy(() => import('../components/UserSearch'));
 
 const Root: React.FC = (): JSX.Element => {
   return (
     <React.Fragment>
       <div id='main'>
+      <React.Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<UserSearch />} />
           <Route
@@ -14,6 +17,7 @@ const Root: React.FC = (): JSX.Element => {
             element={<Navigate to="/" replace />}
           />
         </Routes>
+      </React.Suspense>
       </div>
     </React.Fragment>
   );

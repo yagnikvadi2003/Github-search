@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Form from '../container/common/Form';
-import Card from '../container/common/Card';
+const Form = React.lazy(() => import('../container/common/Form'));
+const Card = React.lazy(() => import('../container/common/Card'));
 
 const UserSearch: React.FC = (): JSX.Element => {
   // 👇️ pass empty string as initial value

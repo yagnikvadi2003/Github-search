@@ -9,6 +9,6 @@ const App: React.FC = (): JSX.Element => {
       <Root />
     </div>
   );
-}
+};
 
 export default App;

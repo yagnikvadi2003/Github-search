@@ -12,7 +12,7 @@ import ERROR_IMAGE from '../../assets/svg/noImage.svg';
  * @returns {Object} { src: String, onError: Func }
 */
 
-const Img: React.FC<ImgProps> = ({ src, alt, width, height, className, id }): JSX.Element => {
+const Img: React.FC<ImgProps> = ({ src, alt, width, height, className, ImageId }): JSX.Element => {
 
   // This function is triggered when an image has been loaded
     const OnLoadHandler = (
@@ -27,9 +27,9 @@ const Img: React.FC<ImgProps> = ({ src, alt, width, height, className, id }): JS
     const OnErrorHandler = (
         event: React.SyntheticEvent<HTMLImageElement, Event>
     ) => {
-        const propsParameters: Array<string> = [id, width, height] as Array<string>;
-        const WIDTH: any = _.includes(propsParameters, id);
-        const HEIGHT: any = _.includes(propsParameters, id);
+        const propsParameters: Array<string> = [ImageId, width, height] as Array<string>;
+        const WIDTH: any = _.includes(propsParameters, ImageId);
+        const HEIGHT: any = _.includes(propsParameters, ImageId);
 
         event.currentTarget.src = ERROR_IMAGE;
         event.currentTarget.width = WIDTH;
@@ -38,16 +38,21 @@ const Img: React.FC<ImgProps> = ({ src, alt, width, height, className, id }): JS
     };
 
     return (
-        <img 
-            src={src}
-            alt={alt}
-            width={width}
-            height={height}
-            className={className}
-            id={id}
-            onLoad={OnLoadHandler}
-            onError={OnErrorHandler}
-        />
+        <a href={src} target='_blank' rel='noopener noreferrer' style={{ border: '1px solid lightgray' }}>
+            <img 
+                src={src}
+                alt={alt}
+                width={width}
+                height={height}
+                className={className}
+                id={ImageId}
+                onLoad={OnLoadHandler}
+                onError={OnErrorHandler}
+                loading='lazy'
+                sizes='(max-width: 600px) 200px, 50vw'
+                style={{ padding: '5px' }}
+            />
+        </a>
     );
 };
 

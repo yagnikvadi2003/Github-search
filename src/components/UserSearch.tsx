@@ -62,9 +62,9 @@ const UserSearch: React.FC = (): JSX.Element => {
     <React.Fragment>
       <div className="userSearchMain">
         <div className='userSearchHeading'>GitHub User Search</div>
-        <Form onSubmit={handleSubmit} onChange={handleChange} value={targetValue} id='userSearchInput' className='userSearchButton'/>
+        <Form onSubmit={handleSubmit} onChange={handleChange} value={targetValue} InputId='userSearchInput' className='fa-solid fa-magnifying-glass' ButtonId='userSearchButton'/>
       </div>
-      <Card avatarUrl='../assets/images/download.jpeg' text='GitHub' onClick={handleClick}/>
+      <Card avatarUrl='../assets/images/download.jpeg' ImageId='cardImage' children='GitHub' className='fa-brands fa-github' onClick={handleClick}/>
     </React.Fragment>
   );
 };

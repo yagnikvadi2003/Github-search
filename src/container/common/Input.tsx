@@ -1,7 +1,7 @@
 import React from 'react';
 import { InputProps } from '../../@types/Type';
 
-const Input: React.FC<InputProps> = ({ id, type, placeholder, className, value, onChange }): JSX.Element => {
+const Input: React.FC<InputProps> = ({ InputId, type, placeholder, className, value, onChange }): JSX.Element => {
   return (
     <input
       type={type}
@@ -10,7 +10,7 @@ const Input: React.FC<InputProps> = ({ id, type, placeholder, className, value, 
       value={value}
       onChange={onChange}
       autoComplete="off"
-      id={id}
+      id={InputId}
       required
     />
   );

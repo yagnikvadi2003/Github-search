@@ -4,23 +4,23 @@ import { FormProps } from '../../@types/Type';
 import Input from './Input';
 import Button from './Button';
 
-const Form: React.FC<FormProps> = ({ onSubmit, onChange, value, id, className }): JSX.Element => {
+const Form: React.FC<FormProps> = ({ onSubmit, onChange, value, InputId, className, IconId, ButtonId }): JSX.Element => {
   return (
     <form onSubmit={onSubmit}>
       <Input
-        id={id}
-        type="text"
+        InputId={InputId}
+        type="search"
         placeholder="Enter username or email"
         onChange={onChange}
         value={value}
       />
-      <Button text="search" type="submit" className={className} />
+      <Button children="search" type="submit" className={className} IconId={IconId} ButtonId={ButtonId} />
     </form>
   );
 };
 
 /**
- * Usage <Form value='SomeThingValue' onChange={ChageEvents} onSubmit={SubmitEvent} />
+ * Usage <Form value='SomeThingValue' onChange={ChangeEvents} onSubmit={SubmitEvent} IconId={IconId} ButtonId={ButtonId} />
 **/
 
 export default Form;

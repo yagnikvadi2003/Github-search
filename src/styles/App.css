@@ -4,7 +4,7 @@
 *
 **/
 .App {
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -161,7 +161,7 @@ button:focus {
   margin: 0 5px;
   padding: 0 10px;
 }
-.userSearchButton {
+#userSearchButton {
   width: clamp(25%, 50px, 50%);
   height: 30px;
   border-radius: 5px;
@@ -186,8 +186,9 @@ button:focus {
   align-items: center;
   cursor: pointer;
   margin: 10px auto;
+  padding: 10px;
 }
-.card-button {
+#card-button {
   width: clamp(50%, 100px, 100%);
   height: 30px;
   border-radius: 5px;
@@ -201,5 +202,4 @@ button:focus {
 #cardImage {
   width: 100px;
   height: 100px;
-  margin: 5px 0;
 }

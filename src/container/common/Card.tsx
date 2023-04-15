@@ -4,11 +4,11 @@ import { CardProps } from '../../@types/Type';
 import Img from './Img';
 import Button from './Button';
 
-const Card: React.FC<CardProps> = ({ text, avatarUrl, onClick }): JSX.Element => {
+const Card: React.FC<CardProps> = ({ avatarUrl, className, children, ImageId, IconId, onClick }): JSX.Element => {
   return (
     <div className="card">
-      <Img src={avatarUrl} alt="Profile" id='cardImage' />
-      <Button text={text} className='card-button' onClick={onClick} />
+      <Img src={avatarUrl} alt="Profile" ImageId={ImageId} />
+      <Button children={children} className={className} IconId={IconId} id='card-button' onClick={onClick}/>
     </div>
   );
 };

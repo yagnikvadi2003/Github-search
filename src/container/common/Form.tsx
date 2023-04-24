@@ -1,10 +1,10 @@
 import React from 'react';
-import { FormTypes } from '../../@types/UnionTypes';
+import { FormProps } from '../../@types/Type';
 
 import Input from './Input';
 import Button from './Button';
 
-const Form: React.FC<FormTypes> = ({ onSubmit, onChange, value, InputId, className, IconId, ButtonId }): JSX.Element => {
+const Form: React.FC<FormProps> = ({ onSubmit, onChange, value, InputId, className, IconId, ButtonId }): JSX.Element => {
   return (
     <form onSubmit={onSubmit}>
       <Input

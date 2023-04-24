@@ -3,7 +3,7 @@ import { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 
 import { api } from '../container/commas';
 
-const useAxios = (axiosParams: AxiosRequestConfig) => {  
+const useAxios = (axiosParams: AxiosRequestConfig) => {
     const [response, setResponse] = React.useState<AxiosResponse>();
     const [error, setError] = React.useState<AxiosError>();
     const [loading, setLoading] = React.useState<boolean>(false);
@@ -13,7 +13,7 @@ const useAxios = (axiosParams: AxiosRequestConfig) => {
             setLoading(true);
             const result = await api.request(params);
             setResponse(result);
-        } catch(error) {
+        } catch (error) {
             setLoading(true);
             setError(error as AxiosError);
         } finally {
@@ -26,7 +26,7 @@ const useAxios = (axiosParams: AxiosRequestConfig) => {
     }
 
     React.useEffect(() => {
-        if(axiosParams.method === "GET" || axiosParams.method === "get"){
+        if (axiosParams.method === "GET" || axiosParams.method === "get") {
             fetchData(axiosParams);
         };
     }, [axiosParams]);

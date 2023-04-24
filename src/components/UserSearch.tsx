@@ -6,9 +6,9 @@ const Card = React.lazy(() => import('../container/common/Card'));
 const API_URL = "https://api.github.com";
 
 interface User {
-  login: string;
-  avatar_url: string;
-  html_url: string;
+  login: string | undefined;
+  avatar_url: string | undefined;
+  html_url: string | undefined;
 }
 
 const UserSearch: React.FC = (): JSX.Element => {
@@ -41,7 +41,6 @@ const UserSearch: React.FC = (): JSX.Element => {
     event?.preventDefault();
     const results = await fetchResults(query);
     setResults(results);
-    console.log("query: ", query);
   }
 
   /**
@@ -79,11 +78,11 @@ const UserSearch: React.FC = (): JSX.Element => {
   * and methods (such as `preventDefault` an others).
   **/
   // const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    // 👇️ prevent page refresh
-    // event?.preventDefault();
+  // 👇️ prevent page refresh
+  // event?.preventDefault();
 
-    // 👇️ redirects to an external URL
-    // window.open('https://github.com/yagnikvadi2003', '_blank', 'noopener noreferrer');
+  // 👇️ redirects to an external URL
+  // window.open('https://github.com/yagnikvadi2003', '_blank', 'noopener noreferrer');
   // };
 
   /*
@@ -94,23 +93,22 @@ const UserSearch: React.FC = (): JSX.Element => {
     <React.Fragment>
       <div className="userSearchMain">
         <div className='userSearchHeading'>GitHub User Search</div>
-        <Form onSubmit={handleSubmit} onChange={handleChange} value={query} InputId='userSearchInput' className='fa-solid fa-magnifying-glass' ButtonId='userSearchButton'/>
+        <Form onSubmit={handleSubmit} onChange={handleChange} value={query} InputId='userSearchInput' className='fa-solid fa-magnifying-glass' ButtonId='userSearchButton' />
       </div>
       {
         results.map((element, index): any => {
           return (
-            <Card 
-              key={index}
-              src='src' 
-              alt='alt'
-              ImageId='cardImage' 
-              children='GitHub' 
+            <Card
+              key={element.login ? element.login : index}
+              avatar={element.avatar_url}
+              alt={element.login}
+              ImageId='cardImage'
+              children='GitHub'
               className='fa-brands fa-github'
             />
           );
         })
       }
-      {/* <Card avatarUrl='../assets/images/download.jpeg' ImageId='cardImage' children='GitHub' className='fa-brands fa-github' onClick={handleClick}/> */}
     </React.Fragment>
   );
 };

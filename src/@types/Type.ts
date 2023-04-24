@@ -1,6 +1,15 @@
 import { ToastContainerProps } from "react-toastify";
 import { ToastProps } from "react-toastify/dist/types";
-import { HTMLButtonTypeElement, HTMLClassNameAttribute, HTMLIdAttribute, HTMLInputTypeAttribute, ToastPosition } from "./UnionTypes";
+import {
+  HTMLButtonTypeElement,
+  HTMLClassNameAttribute,
+  HTMLIdAttribute,
+  HTMLInputTypeAttribute,
+  HTMLOnChangeAttribute,
+  HTMLOnClickAttribute,
+  HTMLOnSubmitAttribute,
+  ToastPosition,
+} from "./UnionTypes";
 
 /*
 *
@@ -9,26 +18,26 @@ import { HTMLButtonTypeElement, HTMLClassNameAttribute, HTMLIdAttribute, HTMLInp
 *
 */
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    ButtonId?: HTMLIdAttribute | undefined;
+    ButtonId?: HTMLIdAttribute;
     children?: React.ReactNode | React.ReactNode[];
     className?: HTMLClassNameAttribute;
-    IconId?: HTMLIdAttribute | undefined;
+    IconId?: HTMLIdAttribute;
     type?: HTMLButtonTypeElement | 'button';
-    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void | undefined;
+    onClick?: HTMLOnClickAttribute;
 }
 
 export interface IconProps {
     className?: HTMLClassNameAttribute;
-    IconId?: HTMLIdAttribute | undefined;
+    IconId?: HTMLIdAttribute;
 }
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-    InputId?: HTMLIdAttribute | undefined;
+    InputId?: HTMLIdAttribute;
     type?: HTMLInputTypeAttribute | 'text';
     value?: string | undefined;
-    placeholder: string | undefined;
+    placeholder?: string | undefined;
     className?: HTMLClassNameAttribute;
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void | undefined;
+    onChange?: HTMLOnChangeAttribute;
 } 
 
 export interface ImgProps extends React.ImgHTMLAttributes<HTMLImageElement> {
@@ -37,12 +46,17 @@ export interface ImgProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     width?: number | string | undefined;
     height?: number | string | undefined;
     className?: HTMLClassNameAttribute;
-    ImageId?: HTMLIdAttribute | undefined;
+    ImageId?: HTMLIdAttribute;
 }
 
-export interface FormProps extends React.FormHTMLAttributes<HTMLFormElement>{
-    onSubmit: (event: React.FormEvent<HTMLFormElement>) => void | undefined;
-    FormId?: HTMLIdAttribute | undefined;
+export interface FormProps extends React.FormHTMLAttributes<HTMLFormElement | HTMLInputElement | HTMLButtonElement> {
+    onSubmit?: HTMLOnSubmitAttribute;
+    onChange?: HTMLOnChangeAttribute;
+    FormId?: HTMLIdAttribute;
+    value?: string | undefined;
+    ButtonId?: HTMLIdAttribute;
+    InputId?: HTMLIdAttribute;
+    IconId?: HTMLIdAttribute;
     className?: HTMLClassNameAttribute;
 }
 
@@ -53,8 +67,14 @@ export interface FormProps extends React.FormHTMLAttributes<HTMLFormElement>{
 *
 */
 export interface CardProps {
-    key?: HTMLIdAttribute | null | undefined;
+    key?: HTMLIdAttribute | number | null | undefined;
     avatar?: string | undefined;
+    alt?: string | undefined;
+    children?: React.ReactNode | React.ReactNode[];
+    className?: string | undefined;
+    ImageId?: string | undefined;
+    IconId?: string | undefined;
+    onClick?: HTMLOnClickAttribute;
 }
 
 /*

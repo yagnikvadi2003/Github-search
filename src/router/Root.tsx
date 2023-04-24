@@ -10,17 +10,17 @@ const Root: React.FC = (): JSX.Element => {
   return (
     <React.Fragment>
       <div id='main'>
-      {/* Use the `Suspense` component to handle the loading of the lazy component. */}
-      <React.Suspense fallback={<Loading />}>
-        <Routes>
-          {/* Render the lazy component using the standard JSX syntax. */}
-          <Route path="/" element={<UserSearch />} />
-          <Route
-            path="*"
-            element={<Navigate to="/" replace />}
-          />
-        </Routes>
-      </React.Suspense>
+        {/* Use the `Suspense` component to handle the loading of the lazy component. */}
+        <React.Suspense fallback={<Loading />}>
+          <Routes>
+            {/* Render the lazy component using the standard JSX syntax. */}
+            <Route path="/" element={<UserSearch />} />
+            <Route
+              path="*"
+              element={<Navigate to="/" replace />}
+            />
+          </Routes>
+        </React.Suspense>
       </div>
     </React.Fragment>
   );

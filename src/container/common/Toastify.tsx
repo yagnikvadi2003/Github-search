@@ -3,17 +3,17 @@ import { ToastContainer } from "react-toastify";
 import { ToastifyProps } from "../../@types/Type";
 
 const Toastify: React.FC<ToastifyProps> = ({
-        position,
-        autoClose,
-        hideProgressBar,
-        newestOnTop,
-        closeOnClick,
-        rtl,
-        pauseOnFocusLoss,
-        draggable,
-        pauseOnHover,
-        ...props
-    }): JSX.Element => {
+    position,
+    autoClose,
+    hideProgressBar,
+    newestOnTop,
+    closeOnClick,
+    rtl,
+    pauseOnFocusLoss,
+    draggable,
+    pauseOnHover,
+    ...props
+}): JSX.Element => {
     return (
         <ToastContainer
             position={position || "bottom-right"}

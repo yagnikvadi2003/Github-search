@@ -1,14 +1,14 @@
 import React from 'react';
-import { CardTypes } from '../../@types/UnionTypes';
+import { CardProps } from '../../@types/Type';
 
 import Img from './Img';
 import Button from './Button';
 
-const Card: React.FC<CardTypes> = ({ key, avatar, className, children, ImageId, IconId, onClick }): JSX.Element => {
+const Card: React.FC<CardProps> = ({ key, avatar, alt, className, children, ImageId, IconId, onClick }): JSX.Element => {
   return (
     <div className="card" key={key}>
-      <Img src={avatar} alt="Profile" ImageId={ImageId} />
-      <Button children={children} className={className} IconId={IconId} id='card-button' onClick={onClick}/>
+      <Img src={avatar} alt={alt} ImageId={ImageId} />
+      <Button children={children} className={className} IconId={IconId} id='card-button' onClick={onClick} />
     </div>
   );
 };

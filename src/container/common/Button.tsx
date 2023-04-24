@@ -4,7 +4,7 @@ import Icon from './Icon';
 
 const Button: React.FC<ButtonProps> = ({ ButtonId, children, className, IconId, type, onClick, ...attributes }): JSX.Element => {
     return (
-        <button 
+        <button
             type={type || 'button'}
             id={ButtonId}
             onClick={onClick}

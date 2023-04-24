@@ -9,15 +9,13 @@
 *
 */
 
-import { ButtonProps, CardProps, FormProps, ImgProps, InputProps } from "./Type";
-
-export type HTMLIdAttribute = number | string;
+export type HTMLIdAttribute = string | undefined;
 export type HTMLInputTypeAttribute = 'button' | 'checkbox' | 'color' | 'date' | 'datetime-local' | 'email' | 'file' | 'hidden' | 'image' | 'month' | 'number' | 'password' | 'radio' | 'range' | 'reset' | 'search' | 'submit' | 'tel' | 'text' | 'time' | 'url' | 'week' | (string & {});
 export type HTMLClassNameAttribute = string | undefined;
+export type HTMLOnChangeAttribute = (event: React.ChangeEvent<HTMLInputElement>) => void | undefined;
+export type HTMLOnClickAttribute = (event: React.MouseEvent<HTMLButtonElement>) => void | undefined;
+export type HTMLOnSubmitAttribute = (event: React.FormEvent<HTMLFormElement>) => void | undefined;
 
 export type HTMLButtonTypeElement = 'button' | 'submit' | 'reset';
 
 export type ToastPosition = 'top-right' | 'top-center' | 'top-left' | 'bottom-right' | 'bottom-center' | 'bottom-left';
-
-export type FormTypes = FormProps & InputProps & ButtonProps;
-export type CardTypes = CardProps & ImgProps & ButtonProps;

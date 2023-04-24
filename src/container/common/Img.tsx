@@ -14,16 +14,16 @@ import ERROR_IMAGE from '../../assets/svg/noImage.svg';
 
 const Img: React.FC<ImgProps> = ({ src, alt, width, height, className, ImageId }): JSX.Element => {
 
-  // This function is triggered when an image has been loaded
+    // This function is triggered when an image has been loaded
     const OnLoadHandler = (
         event: React.SyntheticEvent<HTMLImageElement, Event>
     ) => {
         if (event.currentTarget.className !== "error") {
-        event.currentTarget.className = "success";
+            event.currentTarget.className = "success";
         }
     };
 
-  // This function is triggered if an error occurs while loading an image
+    // This function is triggered if an error occurs while loading an image
     const OnErrorHandler = (
         event: React.SyntheticEvent<HTMLImageElement, Event>
     ) => {
@@ -39,7 +39,7 @@ const Img: React.FC<ImgProps> = ({ src, alt, width, height, className, ImageId }
 
     return (
         <a href={src} target='_blank' rel='noopener noreferrer' style={{ border: '1px solid lightgray' }}>
-            <img 
+            <img
                 src={src}
                 alt={alt}
                 width={width}

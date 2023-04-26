@@ -68,6 +68,7 @@ export interface FormProps extends React.FormHTMLAttributes<HTMLFormElement | HT
 */
 export interface CardProps {
     key?: HTMLIdAttribute | number | null | undefined;
+    url?: string | undefined;
     avatar?: string | undefined;
     alt?: string | undefined;
     children?: React.ReactNode | React.ReactNode[];

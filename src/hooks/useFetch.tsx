@@ -1,7 +1,8 @@
 import React from 'react';
-import { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 
-import { api } from '../container/commas';
+axios.defaults.baseURL = 'https://api.github.com/';
+//If you are using different URLs, consider removing this line and adding a baseURL in the Axios Config parameter. 
 
 const useAxios = (axiosParams: AxiosRequestConfig) => {
     const [response, setResponse] = React.useState<AxiosResponse>();
@@ -11,7 +12,7 @@ const useAxios = (axiosParams: AxiosRequestConfig) => {
     const fetchData = async (params: AxiosRequestConfig) => {
         try {
             setLoading(true);
-            const result = await api.request(params);
+            const result = await axios.request(params);
             setResponse(result);
         } catch (error) {
             setLoading(true);

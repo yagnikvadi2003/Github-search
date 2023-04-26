@@ -102,6 +102,7 @@ const UserSearch: React.FC = (): JSX.Element => {
               key={element.login ? element.login : index}
               avatar={element.avatar_url}
               alt={element.login}
+              url={element.html_url}
               ImageId='cardImage'
               children='GitHub'
               className='fa-brands fa-github'

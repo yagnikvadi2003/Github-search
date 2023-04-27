@@ -1,14 +1,14 @@
 import { ToastContainerProps } from "react-toastify";
 import { ToastProps } from "react-toastify/dist/types";
 import {
-  HTMLButtonTypeElement,
-  HTMLClassNameAttribute,
-  HTMLIdAttribute,
-  HTMLInputTypeAttribute,
-  HTMLOnChangeAttribute,
-  HTMLOnClickAttribute,
-  HTMLOnSubmitAttribute,
-  ToastPosition,
+    HTMLButtonTypeElement,
+    HTMLClassNameAttribute,
+    HTMLIdAttribute,
+    HTMLInputTypeAttribute,
+    HTMLOnChangeAttribute,
+    HTMLOnClickAttribute,
+    HTMLOnSubmitAttribute,
+    ToastPosition,
 } from "./UnionTypes";
 
 /*
@@ -38,7 +38,7 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
     placeholder?: string | undefined;
     className?: HTMLClassNameAttribute;
     onChange?: HTMLOnChangeAttribute;
-} 
+}
 
 export interface ImgProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     src: string | undefined;
@@ -58,24 +58,6 @@ export interface FormProps extends React.FormHTMLAttributes<HTMLFormElement | HT
     InputId?: HTMLIdAttribute;
     IconId?: HTMLIdAttribute;
     className?: HTMLClassNameAttribute;
-}
-
-/*
-*
-* define Custom specific Card Component type properties.
-* add any other custom props you want to use.
-*
-*/
-export interface CardProps {
-    key?: HTMLIdAttribute | number | null | undefined;
-    url?: string | undefined;
-    avatar?: string | undefined;
-    alt?: string | undefined;
-    children?: React.ReactNode | React.ReactNode[];
-    className?: string | undefined;
-    ImageId?: string | undefined;
-    IconId?: string | undefined;
-    onClick?: HTMLOnClickAttribute;
 }
 
 /*
@@ -136,4 +118,25 @@ export interface ToastifyProps extends ToastContainerProps {
      * @INTERNAL
     **/
     props?: ToastProps;
+}
+
+
+/*
+*
+*   • `data`: An array of items of type `T` that the component will be iterating over.
+*   • `renderItem`: A function that takes an item of type `T` as an argument, and returns a 
+*      React node that will be rendered for that item.
+*
+*   generic type parameter `T`, the `MapProps` interface allows you to define the 
+*   type of the data that the component will be iterating over at runtime. This makes the 
+*   component more flexible and reusable, as it can be used with different types of 
+*   data without needing to be rewritten for each type.
+*   
+*   • Define the props for the component using a generic type parameter `T`
+*
+*/
+
+export interface MapProps<T> {
+    data: T[];
+    renderItem: (element: T, index: number) => React.ReactNode;
 }

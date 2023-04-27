@@ -23,4 +23,4 @@ const Form: React.FC<FormProps> = ({ onSubmit, onChange, value, InputId, classNa
  * Usage <Form value='SomeThingValue' onChange={ChangeEvents} onSubmit={SubmitEvent} IconId={IconId} ButtonId={ButtonId} />
 **/
 
-export default Form;
+export default React.memo(Form);

@@ -60,4 +60,4 @@ const Img: React.FC<ImgProps> = ({ src, alt, width, height, className, ImageId }
  * Usage <Img src='someUrl' alt='something' width={100} height={100} className='something' id='something' />
 **/
 
-export default Img;
+export default React.memo(Img);

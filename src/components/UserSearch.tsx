@@ -1,9 +1,11 @@
 import React from 'react';
+import { API_URL } from '../container/commas';
 
+import Map from '../container/common/Map';
+
+const Button = React.lazy(() => import('../container/common/Button'));
 const Form = React.lazy(() => import('../container/common/Form'));
-const Card = React.lazy(() => import('../container/common/Card'));
-
-const API_URL = "https://api.github.com";
+const Img = React.lazy(() => import('../container/common/Img'));
 
 interface User {
   login: string | undefined;
@@ -57,7 +59,8 @@ const UserSearch: React.FC = (): JSX.Element => {
     event?.preventDefault();
     /*
     *
-    * Here, 'EventTarget & HTMLInputElement' is a type that represents an object that can be both an 'EventTarget' and an 'HTMLInputElement'.
+    * Here, 'EventTarget & HTMLInputElement' is a type that represents an object that can be both an 
+    * 'EventTarget' and an 'HTMLInputElement'.
     * 
     * The 'value' property is specific to 'HTMLInputElement' objects, which  means that it may not
     * exist on all objects that implement the 'EventTarget' interface.
@@ -68,22 +71,28 @@ const UserSearch: React.FC = (): JSX.Element => {
     setQuery(inputValue);
   };
 
-  /**
-  * Here we restrict all handleClicks to be exclusively on 
-  * HTMLButtonElement Elements
-  * 
-  * We're using `MouseEvent` as type for the event.
-  * with `HTMLButtonElement` as a type parameter.
-  * It contains properties an event can have
-  * and methods (such as `preventDefault` an others).
-  **/
-  // const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-  // 👇️ prevent page refresh
-  // event?.preventDefault();
-
-  // 👇️ redirects to an external URL
-  // window.open('https://github.com/yagnikvadi2003', '_blank', 'noopener noreferrer');
-  // };
+  /*
+  * This function takes an element of type `User` and an index of type `number` as parameters.
+  */
+  function renderMyDataItem(element: User, index: number): React.ReactNode {
+    /*
+    *
+    * The function returns a React node that renders the markup for the given `User` element.
+    * 
+    * A `div` element is rendered with a class of `"card"`.
+    * The `key` attribute is set to the `element.login` value if it exists, otherwise it is 
+    * set to the `index` value.
+    * 
+    */
+    return (
+      <div className="card" key={element.login ? element.login : index}>
+        <Img src={element.avatar_url} alt={element.login} ImageId='cardImage' />
+        <a href={element.html_url} target="_blank" rel="noopener noreferrer">
+          <Button children='GitHub' className='fa-brands fa-github' id='card-button' />
+        </a>
+      </div>
+    );
+  }
 
   /*
   * 👇️type assertion
@@ -95,21 +104,7 @@ const UserSearch: React.FC = (): JSX.Element => {
         <div className='userSearchHeading'>GitHub User Search</div>
         <Form onSubmit={handleSubmit} onChange={handleChange} value={query} InputId='userSearchInput' className='fa-solid fa-magnifying-glass' ButtonId='userSearchButton' />
       </div>
-      {
-        results.map((element, index): any => {
-          return (
-            <Card
-              key={element.login ? element.login : index}
-              avatar={element.avatar_url}
-              alt={element.login}
-              url={element.html_url}
-              ImageId='cardImage'
-              children='GitHub'
-              className='fa-brands fa-github'
-            />
-          );
-        })
-      }
+      <Map data={results} renderItem={renderMyDataItem} />
     </React.Fragment>
   );
 };

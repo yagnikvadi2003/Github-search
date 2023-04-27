@@ -30,4 +30,4 @@ const Toastify: React.FC<ToastifyProps> = ({
     );
 };
 
-export default Toastify;
+export default React.memo(Toastify);

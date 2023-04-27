@@ -22,4 +22,4 @@ const Button: React.FC<ButtonProps> = ({ ButtonId, children, className, IconId, 
  * Usage <Button text='something' className='something' onclick={ClickEvent} />
 **/
 
-export default Button;
+export default React.memo(Button);

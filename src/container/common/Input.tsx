@@ -19,4 +19,4 @@ const Input: React.FC<InputProps> = ({ InputId, type, placeholder, className, va
 /**
  * Usage <Input type='something' placeholder='something' className='something' value={somethingValue} onChange={something OnChange Event} />
 **/
-export default Input;
+export default React.memo(Input);

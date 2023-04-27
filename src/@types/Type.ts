@@ -8,8 +8,10 @@ import {
     HTMLOnChangeAttribute,
     HTMLOnClickAttribute,
     HTMLOnSubmitAttribute,
+    Method,
     ToastPosition,
 } from "./UnionTypes";
+import { AxiosError } from "axios";
 
 /*
 *
@@ -58,6 +60,25 @@ export interface FormProps extends React.FormHTMLAttributes<HTMLFormElement | HT
     InputId?: HTMLIdAttribute;
     IconId?: HTMLIdAttribute;
     className?: HTMLClassNameAttribute;
+}
+
+export interface AxiosProps {
+    // Required property that represents the URL for the API request.
+    url: string;
+    // Optional property that represents the HTTP method for the API request.
+    // Must be one of the four allowed values: 'get', 'post', 'put', or 'delete'.
+    method?: Method | string;
+    // Optional property that represents the payload data for the API request.
+    data?: any;
+    // Optional property that represents the request headers for the API request.
+    // The keys must be strings, and the values must be strings too.
+    headers?: { [key: string]: string };
+    // Optional callback function that will be called if the API request is successful.
+    // The function takes one parameter, which is the response data.
+    onSuccess?: (data: any) => void;
+    // Optional callback function that will be called if the API request fails.
+    // The function takes one parameter, which is the error object.
+    onError?: (error: AxiosError) => void;
 }
 
 /*
@@ -120,7 +141,6 @@ export interface ToastifyProps extends ToastContainerProps {
     props?: ToastProps;
 }
 
-
 /*
 *
 *   • `data`: An array of items of type `T` that the component will be iterating over.
@@ -135,7 +155,6 @@ export interface ToastifyProps extends ToastContainerProps {
 *   • Define the props for the component using a generic type parameter `T`
 *
 */
-
 export interface MapProps<T> {
     data: T[];
     renderItem: (element: T, index: number) => React.ReactNode;

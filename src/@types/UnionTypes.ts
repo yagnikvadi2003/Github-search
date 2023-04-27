@@ -18,4 +18,6 @@ export type HTMLOnSubmitAttribute = (event: React.FormEvent<HTMLFormElement>) =>
 
 export type HTMLButtonTypeElement = 'button' | 'submit' | 'reset';
 
+export type Method = | 'get' | 'GET' | 'delete' | 'DELETE' | 'post' | 'POST' | 'put' | 'PUT' | 'patch' | 'PATCH';
+
 export type ToastPosition = 'top-right' | 'top-center' | 'top-left' | 'bottom-right' | 'bottom-center' | 'bottom-left';

@@ -9,3 +9,5 @@ export const instance: AxiosInstance = axios.create({
     },
     timeout: 5000, // The maximum number of milliseconds to wait for a request to complete
 });
+
+export const API_URL = process.env.REACT_APP_API_URL?.trim() || '';

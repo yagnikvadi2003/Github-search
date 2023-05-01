@@ -1,11 +1,11 @@
-import { useState, useEffect, useCallback } from "react";
-import { AxiosResponse, AxiosError } from "axios";
-import { instance } from "../container/commas";
-import { AxiosProps } from "../@types/Type";
+import { useState, useEffect, useCallback } from 'react';
+import { AxiosResponse, AxiosError } from 'axios';
+import { instance } from '../container/commas';
+import { AxiosProps } from '../@types/Type';
 
 const useAxios = ({
   url,
-  method = "get",
+  method = 'get',
   data,
   headers,
   onSuccess,
@@ -51,19 +51,19 @@ const useAxios = ({
 export default useAxios;
 
 /*
-*
-*   Usage:=> 
-*   const { loading, response, error } = useAxios({
-*    url: '/query-parameters',
-*    method: 'post',
-*    data: { foo: 'bar' },
-*    headers: { Authorization: 'Bearer token' },
-*    onSuccess: (data) => {
-*      console.log(data);
-*    },
-*    onError: (error) => {
-*      console.log(error);
-*    },
-*  });
-*
-*/
+ *
+ *   Usage:=>
+ *   const { loading, response, error } = useAxios({
+ *    url: '/query-parameters',
+ *    method: 'post',
+ *    data: { foo: 'bar' },
+ *    headers: { Authorization: 'Bearer token' },
+ *    onSuccess: (data) => {
+ *      console.log(data);
+ *    },
+ *    onError: (error) => {
+ *      console.log(error);
+ *    },
+ *  });
+ *
+ */

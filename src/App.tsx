@@ -5,7 +5,7 @@ import Root from './router/Root';
 
 const App: React.FC = (): JSX.Element => {
   return (
-    <div className="App">
+    <div className='App'>
       <Root />
     </div>
   );

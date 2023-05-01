@@ -14,11 +14,8 @@ const Root: React.FC = (): JSX.Element => {
         <React.Suspense fallback={<Loading />}>
           <Routes>
             {/* Render the lazy component using the standard JSX syntax. */}
-            <Route path="/" element={<UserSearch />} />
-            <Route
-              path="*"
-              element={<Navigate to="/" replace />}
-            />
+            <Route path='/' element={<UserSearch />} />
+            <Route path='*' element={<Navigate to='/' replace />} />
           </Routes>
         </React.Suspense>
       </div>

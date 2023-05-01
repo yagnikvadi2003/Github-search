@@ -78,13 +78,15 @@ Folder Structure Conventions
 ### A typical top-level directory layout
 
     github-user-search/
+    ├── .github
     ├── Public
     ├── src
     ├── .env.d.ts
     ├── .gitignore
     ├── LICENSE
-    ├── README.md
     ├── package.json
+    ├── README.md
+    ├── SECURITY.md
     └── tsconfig.json
 
 <details>
@@ -92,8 +94,6 @@ Folder Structure Conventions
 <summary>Basic Folder structure conversions</summary>
 
 * [github/](./.github): This directory contains GitHub-specific files, such as workflows for automated testing and deployment.
-
-* [.vscode/](./.vscode): This directory contains settings and configurations for the Visual Studio Code editor, such as preferred extensions and keybindings.
 
 * [public/](./public): This folder may contain public assets such as images, fonts, or other files that can be accessed directly by the client. This folder is typically served statically by a web server, so it's important to keep sensitive information out of this folder.
 

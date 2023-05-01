@@ -91,21 +91,27 @@ Folder Structure Conventions
 
 <summary>Basic Folder structure conversions</summary>
 
-* [public/](./github-user-search/public): This folder may contain public assets such as images, fonts, or other files that can be accessed directly by the client. This folder is typically served statically by a web server, so it's important to keep sensitive information out of this folder.
+* [github/](./.github): This directory contains GitHub-specific files, such as workflows for automated testing and deployment.
 
-* [src/](./github-user-search/src): This is likely the main source code folder for the project. It may contain subfolders for different parts of the application, such as components, services, or utilities. It's important to keep your source code organized to make it easier to maintain and extend.
+* [.vscode/](./.vscode): This directory contains settings and configurations for the Visual Studio Code editor, such as preferred extensions and keybindings.
 
-* [.env.d.ts](./github-user-search/.env.d.ts): This file is likely used to define type definitions for environment variables used in the project. It's important to have type definitions for environment variables to ensure type safety and reduce errors in your code.
+* [public/](./public): This folder may contain public assets such as images, fonts, or other files that can be accessed directly by the client. This folder is typically served statically by a web server, so it's important to keep sensitive information out of this folder.
 
-* [.gitignore](./github-user-search/.gitignore): This file is used to specify files or folders that should be ignored by version control systems such as Git. It's important to keep sensitive or temporary files out of version control to avoid accidentally committing them.
+* [src/](./src): This is likely the main source code folder for the project. It may contain subfolders for different parts of the application, such as components, services, or utilities. It's important to keep your source code organized to make it easier to maintain and extend.
 
-* [LICENSE](./github-user-search/LICENSE): This file is used to specify the license under which the project is released. It's important to choose a license that is appropriate for your project and to include it in the source code to clarify the terms of use for potential users.
+* [.env.d.ts](./.env.d.ts): This file is likely used to define type definitions for environment variables used in the project. It's important to have type definitions for environment variables to ensure type safety and reduce errors in your code.
 
-* [README.md](./github-user-search/README.md): This file is typically used to provide a brief overview of the project, including instructions for installation, usage, and contribution. It's important to have a clear and concise README to make it easier for others to understand and use your code.
+* [.gitignore](./.gitignore): This file is used to specify files or folders that should be ignored by version control systems such as Git. It's important to keep sensitive or temporary files out of version control to avoid accidentally committing them.
 
-* [package.json](./github-user-search/package.json): This file is used to specify metadata and dependencies for the project, as well as scripts for building, testing, or running the application. It's important to keep this file up-to-date and well-organized to make it easier for others to contribute to your project.
+* [LICENSE](./LICENSE): This file is used to specify the license under which the project is released. It's important to choose a license that is appropriate for your project and to include it in the source code to clarify the terms of use for potential users.
 
-* [tsconfig.json](./github-user-search/tsconfig.json): This file is used to specify configuration options for the TypeScript compiler, such as target version, module resolution, or code generation options. It's important to configure the TypeScript compiler properly to ensure compatibility and performance of your code.
+* [package.json](./package.json): This file is used to specify metadata and dependencies for the project, as well as scripts for building, testing, or running the application. It's important to keep this file up-to-date and well-organized to make it easier for others to contribute to your project.
+
+* [README.md](./README.md): This file is typically used to provide a brief overview of the project, including instructions for installation, usage, and contribution. It's important to have a clear and concise README to make it easier for others to understand and use your code.
+
+* [SECURITY.md](./SECURITY.md): This file contains information about security vulnerabilities and how to report them to the developers.
+
+* [tsconfig.json](./tsconfig.json): This file is used to specify configuration options for the TypeScript compiler, such as target version, module resolution, or code generation options. It's important to configure the TypeScript compiler properly to ensure compatibility and performance of your code.
 
 </details>
 

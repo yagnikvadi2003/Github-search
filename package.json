@@ -4,10 +4,19 @@
   "license": "MIT",
   "private": true,
   "main": "src/index.js",
+  "keywords": [
+    "typescript",
+    "react"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yagnikvadi2003/github-user-search"
+    "url": "https://github.com/yagnikvadi2003/github-user-search",
+    "directory": "src"
   },
+  "bugs": {
+    "url": "https://github.com/yagnikvadi2003/github-user-search/issues"
+  },
+  "homepage": "https://github.com/yagnikvadi2003/github-user-search#readme",
   "dependencies": {
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
@@ -15,7 +24,7 @@
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.10.0",
+    "react-router-dom": "^6.11.0",
     "react-scripts": "5.0.1",
     "react-toastify": "^9.1.2",
     "web-vitals": "^3.3.1"
@@ -47,10 +56,10 @@
     "@types/axios": "^0.14.0",
     "@types/lodash": "^4.14.194",
     "@types/node": "^18.16.1",
-    "@types/react": "^18.0.38",
-    "@types/react-dom": "^18.0.11",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.1",
     "@types/react-router-dom": "^5.3.3",
     "@types/react-toastify": "^4.1.0",
-    "typescript": "^5.0.3"
+    "typescript": "^5.0.4"
   }
 }

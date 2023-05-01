@@ -37,13 +37,15 @@ avatar, and a link to go to their profile.
 Setup/Installation Requirements
 ==================================
 
-git clone https://github.com/yagnikvadi2003/github-user-search/
+git clone -b development https://github.com/yagnikvadi2003/github-user-search/
 - git branch
-    - production
     - development
-        - create new branch
-            - git checkout -b new-branch
+    - create new branch
+      - git checkout -b new-branch
 
+Once all the necessary modifications and updates have been made to the codebase, it is recommended to stage the changes using the "git add" command and create a commit with a descriptive message summarizing the changes made.
+
+Afterwards, it is advisable to switch to the development branch and merge the changes from the current branch using the "git merge" command, ensuring that any conflicts are resolved before finalizing the merge. This ensures that the latest changes are integrated into the development branch and can be tested and reviewed by the rest of the team.
 
 <br />
 <br />
@@ -162,4 +164,4 @@ files are not supposed to be compiled).
 <br />
 
 # License information
-By contributing your code, you agree to license your contribution under the [MIT License](./github-user-search/LICENSE).
+By contributing your code, you agree to license your contribution under the [MIT License](./LICENSE).

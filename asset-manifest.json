@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/yagnikvadi2003/github-user-search/static/css/main.ea66bcab.css",
+    "main.js": "/yagnikvadi2003/github-user-search/static/js/main.f9f022df.js",
+    "static/js/305.13bb23d7.chunk.js": "/yagnikvadi2003/github-user-search/static/js/305.13bb23d7.chunk.js",
+    "static/js/496.389c6709.chunk.js": "/yagnikvadi2003/github-user-search/static/js/496.389c6709.chunk.js",
+    "static/js/324.b4e48824.chunk.js": "/yagnikvadi2003/github-user-search/static/js/324.b4e48824.chunk.js",
+    "static/js/249.2f306dfb.chunk.js": "/yagnikvadi2003/github-user-search/static/js/249.2f306dfb.chunk.js",
+    "static/js/981.3c97979d.chunk.js": "/yagnikvadi2003/github-user-search/static/js/981.3c97979d.chunk.js",
+    "static/js/384.8d6812be.chunk.js": "/yagnikvadi2003/github-user-search/static/js/384.8d6812be.chunk.js",
+    "static/js/763.782494b4.chunk.js": "/yagnikvadi2003/github-user-search/static/js/763.782494b4.chunk.js",
+    "static/media/fa-solid-900.ttf": "/yagnikvadi2003/github-user-search/static/media/fa-solid-900.4a2cd718d7031b732e76.ttf",
+    "static/media/fa-brands-400.ttf": "/yagnikvadi2003/github-user-search/static/media/fa-brands-400.150de8eaa454d669c405.ttf",
+    "static/media/fa-solid-900.woff2": "/yagnikvadi2003/github-user-search/static/media/fa-solid-900.bb975c966c37455a1bc3.woff2",
+    "static/media/fa-brands-400.woff2": "/yagnikvadi2003/github-user-search/static/media/fa-brands-400.e033a13ee751afc1860c.woff2",
+    "static/media/fa-regular-400.ttf": "/yagnikvadi2003/github-user-search/static/media/fa-regular-400.d87474231f4192884802.ttf",
+    "static/media/fa-regular-400.woff2": "/yagnikvadi2003/github-user-search/static/media/fa-regular-400.3223dc79c1adee56370b.woff2",
+    "static/media/fa-v4compatibility.ttf": "/yagnikvadi2003/github-user-search/static/media/fa-v4compatibility.0e3a648be390bd8cb094.ttf",
+    "static/media/fa-v4compatibility.woff2": "/yagnikvadi2003/github-user-search/static/media/fa-v4compatibility.68577e40f3e70067b5da.woff2",
+    "static/media/noImage.svg": "/yagnikvadi2003/github-user-search/static/media/noImage.7aedcc7d191d6e3fcf6d0b9be869037c.svg",
+    "index.html": "/yagnikvadi2003/github-user-search/index.html",
+    "main.ea66bcab.css.map": "/yagnikvadi2003/github-user-search/static/css/main.ea66bcab.css.map",
+    "main.f9f022df.js.map": "/yagnikvadi2003/github-user-search/static/js/main.f9f022df.js.map",
+    "305.13bb23d7.chunk.js.map": "/yagnikvadi2003/github-user-search/static/js/305.13bb23d7.chunk.js.map",
+    "496.389c6709.chunk.js.map": "/yagnikvadi2003/github-user-search/static/js/496.389c6709.chunk.js.map",
+    "324.b4e48824.chunk.js.map": "/yagnikvadi2003/github-user-search/static/js/324.b4e48824.chunk.js.map",
+    "249.2f306dfb.chunk.js.map": "/yagnikvadi2003/github-user-search/static/js/249.2f306dfb.chunk.js.map",
+    "981.3c97979d.chunk.js.map": "/yagnikvadi2003/github-user-search/static/js/981.3c97979d.chunk.js.map",
+    "384.8d6812be.chunk.js.map": "/yagnikvadi2003/github-user-search/static/js/384.8d6812be.chunk.js.map",
+    "763.782494b4.chunk.js.map": "/yagnikvadi2003/github-user-search/static/js/763.782494b4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ea66bcab.css",
+    "static/js/main.f9f022df.js"
+  ]
+}
